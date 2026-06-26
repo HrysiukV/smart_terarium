@@ -63,7 +63,7 @@ An IoT-based system for monitoring and automatic control of a terrarium environm
 ## 🌿 Візуалізація тераріуму
 
 ## 📦 Зовнішній вигляд тераріуму
-![Terrarium View](images/terrarium_view.jpg)
+![Terrarium View](images/terraium_view.jpg)
 
 ## 🪴 Внутрішній вигляд тераріуму
 ![Terrarium Inside](images/terrarium_inside.jpg)
