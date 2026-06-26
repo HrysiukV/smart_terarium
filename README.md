@@ -44,6 +44,29 @@ An IoT-based system for monitoring and automatic control of a terrarium environm
 - дистанційне керування обладнанням;
 - перемикання режимів роботи;
 - автоматична синхронізація з Firebase.
+### 📱 Android Application
+
+## 🏠 Головне меню
+![Main Menu](screenshots/main_menu.jpg)
+
+## 📊 Аналітика
+![Analytics](screenshots/analytics.jpg)
+
+## 📋 Список подій
+![Event List](screenshots/list_event.jpg)
+
+## ⚙️ Дії керування системою
+![Actions](screenshots/2action.jpg)
+
+---
+
+## 🌿 Візуалізація тераріуму
+
+## 📦 Зовнішній вигляд тераріуму
+![Terrarium View](screenshots/terrarium_view.jpg)
+
+## 🪴 Внутрішній вигляд тераріуму
+![Terrarium Inside](screenshots/terrarium_inside.jpg)
 
 ---
 
