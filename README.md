@@ -47,26 +47,26 @@ An IoT-based system for monitoring and automatic control of a terrarium environm
 ### 📱 Android Application
 
 ## 🏠 Головне меню
-![Main Menu](screenshots/main_menu.jpg)
+![Main Menu](images/main_menu.jpg)
 
 ## 📊 Аналітика
-![Analytics](screenshots/analytics.jpg)
+![Analytics](images/analytics.jpg)
 
 ## 📋 Список подій
-![Event List](screenshots/list_event.jpg)
+![Event List](images/list_event.jpg)
 
 ## ⚙️ Дії керування системою
-![Actions](screenshots/2action.jpg)
+![Actions](images/2action.jpg)
 
 ---
 
 ## 🌿 Візуалізація тераріуму
 
 ## 📦 Зовнішній вигляд тераріуму
-![Terrarium View](screenshots/terrarium_view.jpg)
+![Terrarium View](images/terrarium_view.jpg)
 
 ## 🪴 Внутрішній вигляд тераріуму
-![Terrarium Inside](screenshots/terrarium_inside.jpg)
+![Terrarium Inside](images/terrarium_inside.jpg)
 
 ---
 
