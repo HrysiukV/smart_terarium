@@ -1,224 +1,244 @@
-# 🌿 Terrarium Control System – ESP8266 Firmware
+# 🌿 Smart Terrarium Control System
 
-Українська | [English](#english)
+**Software and Hardware Complex for Monitoring and Automation of Terrarium Ecosystems**
 
----
-
-# Українська
-
-## Про проєкт
-
-Цей репозиторій містить прошивку для **ESP8266 (NodeMCU)**, яка є центральним контролером програмно-апаратного комплексу моніторингу та автоматизації мікроклімату тераріуму.
-
-Контролер отримує дані з датчиків, передає їх до **Firebase Realtime Database**, керує виконавчими пристроями та забезпечує роботу системи як у ручному, так і в автоматичному режимах.
+An IoT-based system for monitoring and automatic control of a terrarium environment using **ESP8266**, **Firebase Realtime Database**, and an **Android application**.
 
 ---
 
-## Основні можливості
+# 🇺🇦 Українська
 
-* Підключення до Wi-Fi з автоматичним переходом у режим налаштування через **WiFiManager** у разі втрати мережі.
-* Передача показників датчиків до Firebase у режимі реального часу.
-* Збереження історії вимірювань із часовими мітками.
-* Ведення журналу подій (увімкнення/вимкнення обладнання, запуск системи, аварійні ситуації).
-* Ручне керування обладнанням через Firebase.
-* Автоматичне керування температурою та освітленням.
-* Автоматичний полив залежно від вологості ґрунту.
-* Захист від перегріву нагрівального елемента.
-* Синхронізація часу через NTP-сервери.
-* Асинхронне зчитування температурного датчика для підвищення швидкодії.
+## 📖 Про проєкт
+
+**Smart Terrarium Control System** — це програмно-апаратний комплекс, призначений для автоматичного моніторингу та керування мікрокліматом тераріуму.
+
+Система поєднує мікроконтролер ESP8266, датчики навколишнього середовища, Firebase Realtime Database та Android-застосунок для забезпечення віддаленого контролю, автоматизації процесів і збереження історії вимірювань.
 
 ---
 
-## Підключене обладнання
+## 🚀 Основні можливості
 
-| Пристрій                           | Призначення                             |
-| ---------------------------------- | --------------------------------------- |
-| ESP8266 NodeMCU                    | Центральний контролер                   |
-| BMP280                             | Температура повітря та атмосферний тиск |
-| DS18B20                            | Температура ґрунту                      |
-| Аналоговий датчик вологості ґрунту | Контроль вологості субстрату            |
-| Релейний модуль                    | Керування обладнанням                   |
+### ESP8266 Firmware
 
----
+- автоматичне підключення до Wi-Fi;
+- резервне налаштування Wi-Fi через WiFiManager;
+- передача даних до Firebase Realtime Database;
+- синхронізація часу через NTP;
+- асинхронне зчитування температури з DS18B20;
+- керування освітленням;
+- керування нагрівальним килимком;
+- автоматичне керування насосом поливу;
+- ручний режим роботи;
+- автоматичний денний режим;
+- автоматичний нічний режим;
+- журналювання всіх подій;
+- збереження історії показників;
+- захист від перегріву нагрівального елемента.
 
-## Керовані пристрої
+### Android Application
 
-💡 Освітлення
-🔥 Нагрівальний килимок
-🚿 Насос поливу
-
----
-
-## Режими роботи
-
-### Manual
-
-Користувач безпосередньо керує всіма реле через мобільний застосунок. Стан реле синхронізується з Firebase.
-
-### Day
-
-Автоматичний денний режим.
-
-* освітлення увімкнене;
-* підтримується денна температура;
-* автоматично працює система поливу.
-
-### Night
-
-Автоматичний нічний режим.
-
-* освітлення вимкнене;
-* підтримується нічна температура;
-* автоматично працює система поливу.
+- перегляд показників датчиків у режимі реального часу;
+- перегляд історії вимірювань;
+- графіки температури та вологості;
+- журнал роботи системи;
+- дистанційне керування обладнанням;
+- перемикання режимів роботи;
+- автоматична синхронізація з Firebase.
 
 ---
 
-## Автоматичний полив
+## 🏗 Архітектура системи
 
-Полив виконується лише якщо:
-
-* вологість ґрунту нижче встановленого порога;
-* нагрівальний килимок вимкнений.
-
-Після поливу система очікує кілька хвилин, щоб вода встигла рівномірно розподілитися в субстраті, після чого повторно оцінює рівень вологості.
-
----
-
-## Захист системи
-
-Для запобігання перегріву реалізовано аварійне вимкнення нагрівального килимка.
-
-Якщо температура ґрунту перевищує безпечне значення, нагрівання автоматично вимикається та записується відповідний запис у журнал подій.
-
----
-
-## Firebase
-
-У Firebase зберігаються:
-
-* поточні показники датчиків;
-* стан реле;
-* активний режим роботи;
-* історія вимірювань;
-* журнал роботи системи.
+```text
+                 Android Application
+                         │
+                         │
+          Firebase Realtime Database
+                         │
+                   ESP8266 NodeMCU
+                         │
+      ┌───────────┬───────────┬───────────┐
+      │           │           │           │
+   BMP280      DS18B20   Soil Sensor   Relay Module
+                                         │
+                      ┌──────────────────┼──────────────────┐
+                      │                  │                  │
+                  Lighting          Heating Mat        Water Pump
+```
 
 ---
 
-## Використані бібліотеки
+## 📂 Структура репозиторію
 
-* ESP8266WiFi
-* ESP8266WiFiMulti
-* WiFiManager
-* Firebase ESP Client
-* Adafruit BMP280
-* DallasTemperature
-* OneWire
+```text
+smart_terrarium/
 
----
-
-# English
-
-## About
-
-This repository contains the firmware for an **ESP8266 (NodeMCU)** used as the main controller of a smart terrarium monitoring and automation system.
-
-The controller collects sensor data, synchronizes it with **Firebase Realtime Database**, controls connected devices, and supports both manual and automatic operating modes.
+├── ESP8266/
+│   └── ESP.ino
+│
+├── Android/
+│   ├── app/
+│   ├── gradle/
+│   ├── build.gradle.kts
+│   ├── settings.gradle.kts
+│   └── ...
+│
+└── README.md
+```
 
 ---
 
-## Features
+## 🔧 Використане обладнання
 
-* Automatic Wi-Fi connection with **WiFiManager** fallback.
-* Real-time synchronization with Firebase.
-* Sensor history logging with timestamps.
-* Event logging for all device actions.
-* Manual device control.
-* Automatic temperature regulation.
-* Automatic irrigation based on soil moisture.
-* Emergency overheating protection.
-* NTP time synchronization.
-* Non-blocking DS18B20 temperature reading.
+- ESP8266 NodeMCU
+- BMP280
+- DS18B20
+- Аналоговий датчик вологості ґрунту
+- Релейний модуль
+- Нагрівальний килимок
+- Світлодіодне освітлення
+- Водяний насос
 
 ---
 
-## Hardware
+## 💻 Використані технології
 
-* ESP8266 NodeMCU
-* BMP280
-* DS18B20
-* Soil Moisture Sensor
-* Relay Module
+### Embedded
 
----
+- Arduino IDE
+- ESP8266
+- Firebase ESP Client
+- WiFiManager
+- DallasTemperature
+- Adafruit BMP280
 
-## Controlled Devices
+### Mobile
 
-* Lighting
-* Heating Mat
-* Water Pump
-
----
-
-## Operating Modes
-
-### Manual
-
-The user controls all relays remotely through the mobile application.
-
-### Day
-
-Automatic daytime operation with lighting enabled and temperature regulation.
-
-### Night
-
-Automatic nighttime operation with lighting disabled and lower temperature thresholds.
+- Kotlin
+- Android Studio
+- Firebase Realtime Database
+- MPAndroidChart
+- Material Design
 
 ---
 
-## Automatic Irrigation
+## 📋 Режими роботи
 
-The irrigation system starts only when soil moisture drops below the configured threshold and the heating system is inactive.
+### Manual Mode
 
-After watering, the controller waits for the substrate to absorb water before checking the moisture level again.
+Користувач самостійно керує:
 
----
+- освітленням;
+- нагрівальним килимком;
+- насосом.
 
-## Safety
+### Day Mode
 
-An emergency overheating protection mechanism disables the heating mat whenever the soil temperature exceeds the safe limit.
+Автоматично підтримуються денні параметри мікроклімату.
 
-All emergency events are stored in the system log.
+### Night Mode
 
----
-
-## Firebase Structure
-
-The firmware synchronizes:
-
-* sensor values;
-* relay states;
-* current operating mode;
-* measurement history;
-* event logs.
+Автоматично підтримуються нічні параметри мікроклімату зі зниженими температурними порогами.
 
 ---
 
-## Libraries
+# 🇬🇧 English
 
-* ESP8266WiFi
-* ESP8266WiFiMulti
-* WiFiManager
-* Firebase ESP Client
-* Adafruit BMP280
-* DallasTemperature
-* OneWire
+## 📖 About
+
+**Smart Terrarium Control System** is a software and hardware platform designed for automatic monitoring and environmental control inside a terrarium.
+
+The project combines an ESP8266 microcontroller, environmental sensors, Firebase Realtime Database, and an Android application to provide real-time monitoring, remote control, and automation.
 
 ---
 
-## Author
+## 🚀 Features
+
+### ESP8266 Firmware
+
+- Automatic Wi-Fi connection
+- WiFiManager configuration portal
+- Firebase Realtime Database integration
+- NTP time synchronization
+- Asynchronous DS18B20 temperature reading
+- Lighting control
+- Heating mat control
+- Automatic irrigation
+- Manual control mode
+- Automatic Day Mode
+- Automatic Night Mode
+- Event logging
+- Historical sensor data storage
+- Emergency overheating protection
+
+### Android Application
+
+- Real-time sensor monitoring
+- Historical data visualization
+- Temperature and moisture charts
+- Event log viewer
+- Remote device control
+- Operating mode selection
+- Firebase synchronization
+
+---
+
+## 📂 Repository Structure
+
+```text
+ESP8266/
+    ESP8266 firmware
+
+Android/
+    Android application
+
+README.md
+```
+
+---
+
+## 🔧 Hardware
+
+- ESP8266 NodeMCU
+- BMP280
+- DS18B20
+- Soil moisture sensor
+- Relay module
+- Heating mat
+- LED lighting
+- Water pump
+
+---
+
+## 💻 Technologies
+
+### Embedded
+
+- Arduino IDE
+- ESP8266
+- Firebase ESP Client
+- WiFiManager
+
+### Mobile
+
+- Kotlin
+- Android Studio
+- Firebase Realtime Database
+- MPAndroidChart
+- Material Design
+
+---
+
+## 📄 License
+
+This project was developed as a Bachelor's Qualification Project.
+
+---
+
+## 👩‍💻 Author
 
 **Victoria Hrysiuk**
 
 Bachelor's Qualification Project
 
-**Software and Hardware Complex for Monitoring and Automation of Terrarium Ecosystems**
+National University of Water and Environmental Engineering
