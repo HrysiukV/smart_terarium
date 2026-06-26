@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- РЕЖИМ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="РЕЖИМ"
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnManual"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="MANUAL"
+                android:textColor="#00E676"
+                app:strokeColor="#00E676"
+                app:strokeWidth="1dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#1E1E1E"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDay"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="☀️ ДЕНЬ"
+                android:textColor="#FF9800"
+                app:strokeColor="#FF9800"
+                app:strokeWidth="1dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#1E1E1E"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNight"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="🌙 НІЧ"
+                android:textColor="#2196F3"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#1E1E1E"/>
+
+        </LinearLayout>
+
+        <!-- ПРИСТРОЇ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ПРИСТРОЇ"
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLight"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="💡 СВІТЛО"
+            android:textColor="#FFFFFF"
+            app:strokeColor="#00E676"
+            app:strokeWidth="1dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#1E1E1E"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHeat"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="🔥 ТЕРМОКОВРИК"
+            android:textColor="#FFFFFF"
+            app:strokeColor="#FF5722"
+            app:strokeWidth="1dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#1E1E1E"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPump"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="💧 ПОМПА"
+            android:textColor="#FFFFFF"
+            app:strokeColor="#2196F3"
+            app:strokeWidth="1dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#1E1E1E"
+            />
+
+    </LinearLayout>
+</ScrollView>

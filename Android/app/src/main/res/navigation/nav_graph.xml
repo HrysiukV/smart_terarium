@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.example.terrariumcontrol111.ui.HomeFragment"
+        android:label="Головна"/>
+    <fragment android:id="@+id/controlFragment"
+        android:name="com.example.terrariumcontrol111.ui.ControlFragment"
+        android:label="Керування"/>
+    <fragment android:id="@+id/chartsFragment"
+        android:name="com.example.terrariumcontrol111.ui.ChartsFragment"
+        android:label="Графіки"/>
+    <fragment android:id="@+id/logFragment"
+        android:name="com.example.terrariumcontrol111.ui.LogFragment"
+        android:label="Журнал"/>
+</navigation>

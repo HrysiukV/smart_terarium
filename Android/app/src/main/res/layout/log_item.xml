@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/logItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:background="@drawable/log_item_bg_default"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- НАЗВА -->
+        <TextView
+            android:id="@+id/txtDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔥 HEAT"
+            android:textColor="#FF6D00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"/>
+
+        <!-- ОПИС -->
+        <TextView
+            android:id="@+id/txtReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manual control"
+            android:textColor="#BBBBBB"
+            android:textSize="13sp"
+            android:paddingTop="4dp"/>
+
+        <!-- ДАТА -->
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕐 12 Jan 18:45"
+            android:textSize="11sp"
+            android:textColor="#777777"
+            android:paddingTop="5dp"
+            android:letterSpacing="0.03"/>
+
+    </LinearLayout>
+
+    <!-- ON/OFF BADGE -->
+    <TextView
+        android:id="@+id/txtAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ON"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@drawable/log_pill_on"/>
+
+</LinearLayout>

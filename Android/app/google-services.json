@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "53277155236",
+    "firebase_url": "https://terrariumcontrol-3318a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "terrariumcontrol-3318a",
+    "storage_bucket": "terrariumcontrol-3318a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53277155236:android:bf007aa5c42b9cfa3eeb31",
+        "android_client_info": {
+          "package_name": "com.example.terrariumcontrol111"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU0beE3H9eLjUUXpoX_bYL_7Bc0YB0r5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

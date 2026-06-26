@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TerrariumControl111</string>
+    <string name="log_format">
+%s
+
+Пристрій: %s
+Час: %s
+</string>
+</resources>
